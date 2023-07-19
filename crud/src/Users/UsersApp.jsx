@@ -1,47 +1,50 @@
 import React, { useEffect, useState } from 'react'
-import UserList from './UserList'
-import UserDetails from './UserDetails'
 import Axios from 'axios'
+import UserList from './UserList';
+import UserDetails from './UserDetails';
 const UsersApp = () => {
-    let [users, setUsers] = useState({})
-    let [errmessage, setErrMessage] = useState("")
-    let[selectedUser,setSelectedUser]=useState({})
-    useEffect(() => {
-        Axios.get('https://jsonplaceholder.typicode.com/users').then((response) => {
-            setUsers(response.data)
+   let[users,setUsers]= useState([]);
+   let[selectedUser,setSelectedUser]=useState({})
+   useEffect(()=>{
+    let url='https://jsonplaceholder.typicode.com/users'
+Axios.get(url)
+.then((response)=>{
+    console.log(response.data)
+    setUsers(response.data)
 
-        }).catch(() => {
+})
+.catch(()=>{})
+   },[])
+   let selectedHandler=(user)=>{
+    setSelectedUser(user)
 
-        })
-    }, [])
-  let  selecteduserHandler=(user)=>{
-setSelectedUser(user)
-    }
-    return (
-        <div className='container'>
-            <h2>User App</h2>
-            <pre>{JSON.stringify(users)}</pre>
-            <div className="row">
-                <div className="col-md-8">
-                    {
-                        users.length > 0 ? <>
-                            <UserList users={users} selectedUser={selecteduserHandler} />
+   }
+   
+  return (
+    <div className="container">
+        <div className="row">
+        <pre>{JSON.stringify(users)}</pre>
+            <div className="col-md-8">
+                {
+                    users.length >0?<><UserList users={users} selectedUser={selectedHandler}/></>:<>****NO DATA****</>
+                }
 
-                        </> : null
-                    }
-
-                </div>
-                <div className="col-md-4">
-                    {
-                        Object.keys(selectedUser).length>0?<>
- <UserDetails  selectedUser={selectedUser}/>
-                        </>:<><h1>no data</h1></>
-                    }
-                   
-                </div>
             </div>
+            <div className="col-md-4">
+                {
+                 Object.keys(selectedUser).length>0?<>
+                 <UserDetails selectedUser={selectedUser}/>
+                 </> :<>****<h1>NO data</h1></> 
+                }
+
+            
+               
+            </div>
+          
+
         </div>
-    )
+    </div>
+  )
 }
 
 export default UsersApp
