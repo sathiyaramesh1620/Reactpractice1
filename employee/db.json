@@ -1,0 +1,10 @@
+{
+  "product": [
+    {
+      "id": 1,
+      "soap": "haman",
+      "Email": "haman@in.com",
+      "phone":"1234567"
+    }
+  ]
+}

@@ -6,7 +6,7 @@ const Counter = () => {
         pro_Name:" Iphone12",
         image:"https://m.media-amazon.com/images/I/61bK6PMOC3L._SX679_.jpg",
         price:"10000",
-        qty:"1",
+        qty:"0",
         Total:""
 
     })
