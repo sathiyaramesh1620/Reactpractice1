@@ -1,4 +1,4 @@
-import {combineReducers} from 'redux'
-import { messageReducer } from './message/messege.reducer'
+import { combineReducers } from "redux";
+import {messageReducer} from './message/message.reducer'
 let rootReducer=combineReducers({message:messageReducer})
 export {rootReducer}

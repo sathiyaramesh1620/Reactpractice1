@@ -1,22 +1,19 @@
 import React from 'react'
 import Navbar from './Navbar/Navbar'
+import {BrowserRouter as Router,Routes,Route } from 'react-router-dom'
 import Message from './Message/Message'
-import {BrowserRouter as Router, Routes,Route}  from 'react-router-dom' 
-import { store } from './redux/store'
-import {Provider} from 'react-redux'
+import { Provider } from 'react-redux'
+import{store}from './redux/store'
 const App = () => {
   return (
-    <div>
-      <Provider store={store}>
-<Router>
+    <Provider store={store}>
+    <Router>
       <Navbar/>
       <Routes>
-        <Route path="/message" element={<Message/>}/>
+        <Route path="/message"  element={<Message/>}/>
       </Routes>
     </Router>
     </Provider>
-    </div>
-    
   )
 }
 
