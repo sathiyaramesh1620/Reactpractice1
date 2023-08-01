@@ -6,7 +6,7 @@ const Navbar = () => {
       <Link to="/" className="navbar-brand">message with redux</Link>
       <div className='ml-auto'>
         <ul className='navbar nav'>
-          <li className='nav-list'><Link to ="/message" className="nav-link"> message with redux</Link></li>
+          <li className='nav-list'><Link to ="/message" className="nav-link">Product</Link></li>
         </ul>
       </div>
 
