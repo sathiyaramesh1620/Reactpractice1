@@ -1,23 +1,22 @@
-
-import {INCR,DECR} from './product.action'
-let initialState = {
+import {INCR, DECR } from "./product.action"
+let initialState={
     name: "phone",
-    image: "https://m.media-amazon.com/images/I/31GmCJTD0GL._SY445_SX342_QL70_FMwebp_.jpg",
+    image: "https://m.media-amazon.com/images/I/711wsjBtWeL._SX679_.jpg",
     price: "10000",
-    qty: 1,
-Total:""
+    qty: "1",
+    total: ""
 }
 
 
-let productReducer = (state = initialState, action) => {
+let productReducer=(state=initialState,action)=>{
     console.log(action.type)
-    switch (action.type) {
+    switch(action.type){
         case INCR:
-            return { ...state, qty: state.qty + 1 }
+            return{...state,qty:state.qty+1}
         case DECR:
-            return { ...state, qty: state.qty - 1 }
-        default:
-            return state
+            return{...state,qty:state.qty-1}
+                default:
+                    return state
     }
 }
-export {productReducer}
+export{productReducer}

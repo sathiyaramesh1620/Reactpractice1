@@ -1,10 +1,11 @@
- const INCR="INCR";
- const DECR="DECR";
- 
- let incrAction=()=>{
-    return {type:INCR}
- }
-let decrAction=()=>{
-    return {type:DECR}
+let INCR="INCR"
+let DECR="DECR"
+
+
+let incrAction=()=>{
+    return{type:INCR}
 }
-export {INCR,DECR,incrAction,decrAction}
+let decrAction=()=>{
+    return{type:DECR}
+}
+export {incrAction,decrAction,INCR,DECR}
