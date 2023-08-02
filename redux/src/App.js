@@ -1,7 +1,8 @@
 import React from 'react'
-import Product from './Product/Product'
+
 import Navbar from './Navbar/Navbar'
 import{BrowserRouter as Router,Routes,Route} from 'react-router-dom'
+import Users from './Users/Users'
 import {Provider} from "react-redux"
 import { store } from './redux/store'
 const App = () => {
@@ -10,10 +11,10 @@ const App = () => {
     <Router>
       <Navbar/>
       <Routes>
-        <Route path='/product' element={<Product/>}/>
+        <Route path='/user' element={<Users/>}/>
       </Routes>
     </Router>
-    </Provider>
+     </Provider>
   )
 }
 
